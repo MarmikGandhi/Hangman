@@ -13,10 +13,9 @@ A visually engaging and interactive Hangman game built with HTML, CSS, and JavaS
 - Notification for repeated letter guesses
 - Replayable experience
 
-  ## 🚀 Demo
+## 🚀 Demo
 
-  Want to try it out? [Click here to open the live demo](https://bmi-calculator-marmik.netlify.app/)
-
+Want to try it out? [Click here to open the live demo](https://bmi-calculator-marmik.netlify.app/)
 
 ## 🚀 Getting Started
 
