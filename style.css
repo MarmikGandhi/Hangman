@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
+
+:root {
+  --primary-color: #1f2f61;
+  --secondary-color: #224ca4;
+  --light-color: #a7c2da;
+  --correct-color: #3be8b0;
+  --wrong-color: #e8513b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(120deg, #1f2f61, #3e5da7);
+  color: var(--light-color);
+  font-family: "DotGothic16", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px #000;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+h2,
+h3 {
+  letter-spacing: 0.2rem;
+}
+
+.game-container {
+  padding: 20px 30px;
+  margin: 20px auto;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: var(--light-color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.figure-part {
+  display: none;
+  transition: all 0.3s ease-in;
+}
+
+.wrong-letters-container {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.word {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.letter {
+  border-bottom: 3px solid var(--secondary-color);
+  border-radius: 8px;
+  font-size: 30px;
+  width: 28px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.letter:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  animation: popupFadeIn 0.5s ease;
+}
+
+.popup button {
+  cursor: pointer;
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+  border: 0;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-family: inherit;
+  border-radius: 5px;
+}
+
+.popup button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.notification-container {
+  position: fixed;
+  bottom: 20px;             /* move slightly lower */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;            /* make sure it's very top layer */
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: white;
+}
+
+
+.notification-container.show {
+  display: block;
+}
+
+#hint-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#hint-button:hover {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+}
+
+#hint-text {
+  margin-top: 40px;         /* give more spacing */
+  font-style: italic;
+  text-align: center;
+  position: relative;
+  z-index: 2;               /* move it above background elements */
+  margin-bottom: 90px;      /* add space at the bottom so it's not near the notification */
+}
+
+
+.correct-flash {
+  animation: flash-green 0.3s;
+}
+
+.wrong-flash {
+  animation: flash-red 0.3s;
+}
+
+@keyframes popupFadeIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flash-green {
+  from {
+    background-color: var(--correct-color);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes flash-red {
+  from {
+    background-color: var(--wrong-color);
+  }
+  to {
+    background-color: transparent;
+  }
+}
