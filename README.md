@@ -17,7 +17,7 @@ A visually engaging and interactive Hangman game built with HTML, CSS, and JavaS
 
 Want to try it out? [Click here to open the live demo](https://bmi-calculator-marmik.netlify.app/)
 
-### 📁 Project Structure
+## 📁 Project Structure
 
 ```
 ├── index.html     # Main HTML structure
@@ -25,7 +25,7 @@ Want to try it out? [Click here to open the live demo](https://bmi-calculator-ma
 ├── script.js      # Game logic
 ```
 
-### 💻 How to Run
+## 💻 How to Run
 
 1. Clone or download the repository
 2. Open `index.html` in any modern web browser (no server required)
