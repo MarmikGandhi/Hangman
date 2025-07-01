@@ -17,8 +17,6 @@ A visually engaging and interactive Hangman game built with HTML, CSS, and JavaS
 
 Want to try it out? [Click here to open the live demo](https://bmi-calculator-marmik.netlify.app/)
 
-## 🚀 Getting Started
-
 ### 📁 Project Structure
 
 ```
